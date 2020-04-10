@@ -120,7 +120,7 @@ export function getScrollParent(
 ): HTMLElement | Document {
   const parent = scrollParent(element);
 
-  if (parent.isSameNode(scrollDoc())) {
+  if (parent === undefined || parent.isSameNode(scrollDoc())) {
     if (forListener) {
       return document;
     }
